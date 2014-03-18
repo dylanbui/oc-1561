@@ -2,17 +2,17 @@
 // Version
 define('VERSION', '1.5.6.1');
 
-/* Testing non-beta */
+// define the site path __SITE_PATH : c:\xampp\htdocs\adv_mvc
+define ('__ROOT_PATH', realpath(dirname(__FILE__)));
 
 // Configuration
-if (file_exists('config.php')) {
-	require_once('config.php');
-}  
+if (file_exists('admin/config-catalog.php')) {
+	require_once('admin/config-catalog.php');
+}
 
-// Install 
-if (!defined('DIR_APPLICATION')) {
-	header('Location: install/index.php');
-	exit;
+// Configuration
+if (file_exists('admin/config-db.php')) {
+	require_once('admin/config-db.php');
 }
 
 // Startup
